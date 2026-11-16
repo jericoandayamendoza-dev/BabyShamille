@@ -1,0 +1,314 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffe4ef, #fff0f5, #fce4ec);
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #873b5d;
+}
+
+/* BACKGROUND */
+
+.background-hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.bg-heart {
+    position: absolute;
+    bottom: -30px;
+    animation: floatHeart 7s linear forwards;
+    opacity: 0.5;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* MAIN PAGE */
+
+.container {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.top-icon {
+    font-size: 55px;
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.small-title {
+    margin-top: 20px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #d76b97;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: clamp(32px, 7vw, 55px);
+    color: #c94f82;
+    margin-top: 15px;
+}
+
+.description {
+    max-width: 400px;
+    margin: 15px 0;
+    line-height: 1.8;
+    font-size: 14px;
+    color: #91647a;
+}
+
+.cute-image {
+    font-size: 90px;
+    margin: 15px;
+    animation: flowerMove 3s ease-in-out infinite;
+}
+
+@keyframes flowerMove {
+    50% {
+        transform: rotate(10deg) scale(1.1);
+    }
+}
+
+/* BUTTONS */
+
+.buttons-area {
+    position: relative;
+    width: min(350px, 90vw);
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+button {
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s;
+    box-shadow: 0 5px 15px #b94e7725;
+}
+
+.yes-btn {
+    background: #e85d91;
+    color: white;
+}
+
+.yes-btn:hover {
+    transform: scale(1.12);
+    background: #d83e7c;
+}
+
+.no-btn {
+    background: white;
+    color: #d65c89;
+    border: 2px solid #f2b5cd;
+    position: relative;
+    z-index: 5;
+}
+
+.hint {
+    font-size: 12px;
+    margin-top: 15px;
+    color: #bd7896;
+}
+
+/* SUCCESS PAGE */
+
+.success-page {
+    display: none;
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.success-page.show {
+    display: block;
+    animation: appear 1s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.success-content {
+    max-width: 750px;
+    margin: auto;
+    position: relative;
+    z-index: 3;
+}
+
+.bouquet {
+    font-size: 100px;
+    animation: flowerPop 1s ease infinite alternate;
+}
+
+@keyframes flowerPop {
+    to {
+        transform: scale(1.15) rotate(5deg);
+    }
+}
+
+.success-content h1 {
+    font-size: clamp(38px, 8vw, 65px);
+}
+
+.success-content h2 {
+    color: #c94f82;
+    margin: 15px 0;
+}
+
+.success-content p {
+    color: #91647a;
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+.love-message {
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.divider {
+    width: 80%;
+    height: 2px;
+    background: #f1b5cc;
+    margin: 45px auto;
+}
+
+/* NOTES */
+
+.notes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.note-card {
+    background: #fffafd;
+    padding: 25px 18px;
+    border-radius: 20px;
+    border: 1px solid #f4c1d4;
+    box-shadow: 0 8px 25px #d86b9720;
+    transition: 0.3s;
+}
+
+.note-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px #d86b9740;
+}
+
+.note-card span {
+    font-size: 35px;
+}
+
+.note-card h3 {
+    margin: 12px 0;
+    color: #d65388;
+}
+
+.note-card p {
+    font-size: 12px;
+}
+
+.ending {
+    margin-top: 50px;
+    font-weight: 600;
+    color: #d65388 !important;
+}
+
+/* CELEBRATION */
+
+.flower-particle {
+    position: fixed;
+    top: -50px;
+    z-index: 10;
+    pointer-events: none;
+    animation: fallDown linear forwards;
+}
+
+@keyframes fallDown {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .notes {
+        grid-template-columns: 1fr;
+    }
+
+    .note-card {
+        padding: 25px;
+    }
+
+    .success-page {
+        padding: 35px 18px;
+    }
+
+    .buttons-area {
+        gap: 12px;
+    }
+
+    button {
+        padding: 12px 23px;
+    }
+}
